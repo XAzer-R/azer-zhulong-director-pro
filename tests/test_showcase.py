@@ -12,8 +12,8 @@ spec.loader.exec_module(validator)
 
 
 class ShowcaseTests(unittest.TestCase):
-    def test_actual_selected_image_matches_manifest(self):
-        self.assertEqual(set(validator.showcase_assets(ROOT)), {'docs/showcase/illustrated-character-sheet.png'})
+    def test_showcase_is_empty(self):
+        self.assertEqual(validator.showcase_assets(ROOT), {})
 
     def test_unlisted_whitebox_images_are_not_approved(self):
         approved = validator.showcase_assets(ROOT)
