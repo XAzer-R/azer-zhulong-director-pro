@@ -1,0 +1,17 @@
+{
+  "schema_version": 1,
+  "name": "阿泽 AI导演专业版｜烛龙造境",
+  "slug": "azer-zhulong-director-pro",
+  "version": "0.1.0",
+  "native_host": "Claude Code",
+  "roles": [
+    "director",
+    "art-designer",
+    "storyboard-artist"
+  ],
+  "review_revision_limit": 2,
+  "failure_state": "FAILED",
+  "auto_media_generation": false,
+  "projects_root": ".",
+  "host_e2e_verified": false
+}

@@ -1,0 +1,161 @@
+{
+  "schema_version": 1,
+  "assembly_mode": "copy_selected_and_adapted",
+  "source_commit": "e64e7058e5fb8e7ba6280c0f23e90f1685b92335",
+  "source_access": "author_private_source",
+  "hooks_enabled": false,
+  "files": [
+    {
+      "path": ".claude/agents/art-designer.md",
+      "sha256": "c05b4c7f61fdd41fc38425d4c127d21126ba7706f68b022014cbddcae1fef47c"
+    },
+    {
+      "path": ".claude/agents/director.md",
+      "sha256": "7333f04af0e9ce6ece65093546efe8768b01db1d3c44952f870afc1ea5ee3a8a"
+    },
+    {
+      "path": ".claude/agents/storyboard-artist.md",
+      "sha256": "38d94e837181d87062d451d6dcf7b6813dcb13957ad2e077c3200eb63af39969"
+    },
+    {
+      "path": ".claude/CLAUDE.md",
+      "sha256": "09679e989e8f6c1b804059724ce30c5e2485cf12cb26b27f9aac3852307684e0"
+    },
+    {
+      "path": ".claude/skills/action-choreography-skill/SKILL.md",
+      "sha256": "6e1f34e886f3821e2c1adde8885d2e7c2af0f5f3e60a31b8dfdcfd195e25b7c3"
+    },
+    {
+      "path": ".claude/skills/art-design-skill/examples/character-prompt-examples.md",
+      "sha256": "9b83207864dc73bee2994dd06c31ae170e28c6fa2b20dd59f4d986e68f34dc8e"
+    },
+    {
+      "path": ".claude/skills/art-design-skill/examples/scene-prompt-examples.md",
+      "sha256": "9b83207864dc73bee2994dd06c31ae170e28c6fa2b20dd59f4d986e68f34dc8e"
+    },
+    {
+      "path": ".claude/skills/art-design-skill/gemini-image-prompt-guide.md",
+      "sha256": "cfa654116afc71c84a4ba79675e8b94510b51e372e62fbd9cff2049e9bade6a2"
+    },
+    {
+      "path": ".claude/skills/art-design-skill/SKILL.md",
+      "sha256": "8f6aed63331d415ed7e2b34dc3a1f37c081a95a364a03731ad81e630008f34d9"
+    },
+    {
+      "path": ".claude/skills/art-design-skill/visual-style-presets.md",
+      "sha256": "e89f1c85689c5057c4dd6f01404481429812408c6bb6061a869daf8e53d6554d"
+    },
+    {
+      "path": ".claude/skills/caribbean-verbinski-skill/SKILL.md",
+      "sha256": "dc021956f60c69866ab9ef1c18cda78bfd9588ebbcffb1421a06a6275061e1e8"
+    },
+    {
+      "path": ".claude/skills/cinematic-lighting-skill/SKILL.md",
+      "sha256": "1ceec037b743eab84fa845e80cb96fe2a92732dd0460334dc504722b10376cbf"
+    },
+    {
+      "path": ".claude/skills/cinematography-skill/SKILL.md",
+      "sha256": "2dd402377b87c276d4eeef5d93b4c837490b8d13a8636ec3fbbcd4915b059442"
+    },
+    {
+      "path": ".claude/skills/cinematography-skill/styles/_轨B-名导招牌镜头库.md",
+      "sha256": "417500f51ed6e28a645102922b72d95277728445e7144b776052cc3028dc466c"
+    },
+    {
+      "path": ".claude/skills/cinematography-skill/styles/_风格方法论与库.md",
+      "sha256": "bb2e0b0a1bdade455f697f4dc184870acf847d1b6000bd6f6af9a23cfb014869"
+    },
+    {
+      "path": ".claude/skills/cinematography-skill/styles/deakins/SKILL.md",
+      "sha256": "e03ce2783c46869f7d7b454bdf3a8ce2e03bc887f5a4ec4eda1d8e57e2e98b86"
+    },
+    {
+      "path": ".claude/skills/cinematography-skill/styles/style-library.json",
+      "sha256": "4323c98231c150270f4eb225df5f9364ede02caef03be4201b2a396f5c20b9de"
+    },
+    {
+      "path": ".claude/skills/consistency-skill/examples/cross-episode-continuity-example.md",
+      "sha256": "9b83207864dc73bee2994dd06c31ae170e28c6fa2b20dd59f4d986e68f34dc8e"
+    },
+    {
+      "path": ".claude/skills/consistency-skill/examples/cross-shot-handoff-example.md",
+      "sha256": "9b83207864dc73bee2994dd06c31ae170e28c6fa2b20dd59f4d986e68f34dc8e"
+    },
+    {
+      "path": ".claude/skills/consistency-skill/SKILL.md",
+      "sha256": "8644d7d976d484ab4ac343779c4af51bad188702f1fb90b2f4e817afcd1258a4"
+    },
+    {
+      "path": ".claude/skills/consistency-skill/templates/seeds-registry-template.md",
+      "sha256": "e58001e77c97a2dc3bc3c920c7473a4c2c880c8fba017f11087d8bb33a57a4ec"
+    },
+    {
+      "path": ".claude/skills/consistency-skill/templates/state-table-template.md",
+      "sha256": "cd26575cb09c7a5b2b10f489c3693c96b6af071a5c880e5726936a99ea983407"
+    },
+    {
+      "path": ".claude/skills/director-skill/SKILL.md",
+      "sha256": "f80d410061c7a283cce57d3bdf8136555ceca4cfeac7b0fc21a1f825907e7f89"
+    },
+    {
+      "path": ".claude/skills/director-skill/templates/director-analysis-template.md",
+      "sha256": "fcdc3c9d9cabde793a12cfd48a9cd5ed1417b3d1dcf5ec954124df1f90d58644"
+    },
+    {
+      "path": ".claude/skills/guzhuang-xingzhi-skill/SKILL.md",
+      "sha256": "07cf97b2441859d968121355bce2686770161b445150a59f4ee467af7765d188"
+    },
+    {
+      "path": ".claude/skills/keyframe-review-skill/SKILL.md",
+      "sha256": "eabf7d20acd3ae7f869231f4932349c103cc30421c8aa0bb586cc850b0ea0ea4"
+    },
+    {
+      "path": ".claude/skills/long-take-skill/SKILL.md",
+      "sha256": "721fc88899ededc9f5f9b7887efdac69da173c9771fd852dd8c865b6cd84d7f9"
+    },
+    {
+      "path": ".claude/skills/material-pbr-skill/SKILL.md",
+      "sha256": "00a21c57b92573a38008018771ad2bba1eda6f9bd2bd643956b07c39fc41a70b"
+    },
+    {
+      "path": ".claude/skills/otomo-wright-fusion-skill/SKILL.md",
+      "sha256": "69a8e73fdcc0c9aa5aa45d708829203f0e4630494f2fe08d73399a2be68955bc"
+    },
+    {
+      "path": ".claude/skills/performance-skill/SKILL.md",
+      "sha256": "e98818ce4b724fc0fc632317d32488c5e060d5cc527f56fe12c2d77eb5abcc7f"
+    },
+    {
+      "path": ".claude/skills/review-skill/SKILL.md",
+      "sha256": "b0391cc18bc8042146547a3128b4681d9d4c1de25709b9988ee69a56140812f0"
+    },
+    {
+      "path": ".claude/skills/seedance-kling-capabilities/seedance-prompt-methodology.md",
+      "sha256": "c5c76cfeca672260c79be155fd465b5e8c4afe0464f2c69e7fecaee3e3d8886a"
+    },
+    {
+      "path": ".claude/skills/seedance-kling-capabilities/SKILL.md",
+      "sha256": "3bb310dfaa1382481855b7b1b6ff0df77411cb3a87ca55c8d2cecf1ad2c2504d"
+    },
+    {
+      "path": ".claude/skills/sound-design-skill/SKILL.md",
+      "sha256": "d8c32224b623a4a3011493770e24c6103fb13c90953a6c8f88ec0f821a809b0a"
+    },
+    {
+      "path": ".claude/skills/staging-skill/SKILL.md",
+      "sha256": "857a8c7caa983c613614d86570778d81af51f2cca1e4b114c7a8185b92873d98"
+    },
+    {
+      "path": ".claude/skills/storyboard-skill/SKILL.md",
+      "sha256": "4adda43ba647870ff7488099834e840e1d3979c83e8168994f6354cf3a2fad74"
+    },
+    {
+      "path": ".claude/skills/storyboard-skill/templates/production-template.md",
+      "sha256": "c673ab62a0d8eb113d773fd70ced0de843144b8415a118089669da5d8caf140c"
+    },
+    {
+      "path": ".claude/skills/storyboard-skill/templates/storyboard-template.md",
+      "sha256": "82b657899f020eabfaaca456b27009f746587ee73f586150a27ea7f2cceef087"
+    }
+  ]
+}

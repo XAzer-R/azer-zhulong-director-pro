@@ -1,0 +1,669 @@
+{
+  "meta": {
+    "name": "导演 / 影片 / 流派 风格库",
+    "version": "1.0",
+    "source_of_truth": "_风格方法论与库.md 为主源（人读·可编辑）；本 JSON 为镜像（机读）。两份内容应一致，以 MD 为准。新增风格优先改 MD，再同步本文件。",
+    "two_track_architecture": "★2026-06-13 用户校正·覆盖旧 motion_decoupled。双轨默认耦合：轨A·画面光影色彩(①-⑥维→风格前缀块→服化道生图)；轨B·镜头运镜(⑦维→招牌运镜→导演视频提示词运动层)。选定某导演/作品=两轨一起套（既用他的画面光影、也用他的招牌镜头）；混搭(A导演光影+B导演镜头)为可选override，非默认。旧版『运镜解耦·默认不套』作废。轨B深度招牌镜头库见 _轨B-名导招牌镜头库.md。",
+    "_deprecated_motion_decoupled": "（废弃）原『画面风格不绑定运镜』已被 two_track_architecture 取代——那会把轨B整条砍掉、导致名导招牌镜头永不出现。",
+    "methodology": "见 _风格方法论与库.md（7 维拆解框架）。新风格照 7 维拆一遍、追加到 styles 数组即可。",
+    "dimensions": {
+      "camera_lens": "① 摄影机/镜头：机型质感·焦段·画幅·镜头特性",
+      "composition": "② 构图：对称/中心/三分/前景框架/留白·人景比例",
+      "lighting": "③ 光影：光源逻辑·对比·明暗·阴影质感·高/低调",
+      "color_grading": "④ 色彩/调色：调色板·饱和·色温·grading",
+      "texture_medium": "⑤ 质感/介质：胶片颗粒·画幅比·锐/柔·笔触·年代",
+      "atmosphere_motif": "⑥ 氛围/母题：签名元素·空间感·情绪基调",
+      "motion_pacing": "⑦ 运动/节奏(运镜层)：运镜·剪辑·天气动势"
+    },
+    "usage": "把 prompt_prefix + avoid 放在『中文内容描述』最前 → 文生图。服化道身份级底与分镜师 @图N 关键帧两处都带同一条风格前缀（生图烧入）。同一内容只换 prompt_prefix = 风格切换。"
+  },
+  "styles": [
+    {
+      "id": "hou-hsiao-hsien-candlelit",
+      "name_zh": "侯孝贤·烛火工笔（古装商道定制）",
+      "type": "director",
+      "reference_image": null,
+      "custom_for": null,
+      "dimensions": {
+        "camera_lens": "真人实拍·长焦柔焦·浅至中景深·胶片质感",
+        "composition": "工笔静帧·框中框·门窗梁柱前景遮挡·留白·9:16纵向压迫",
+        "lighting": "自然烛光/油灯·窗光柔散·低调暖黄·烛影摇曳·暗部含蓄",
+        "color_grading": "青瓷·赭石·墨灰低饱和雅调·暖钨丝烛光点缀",
+        "texture_medium": "轻纱柔散漫射·细腻胶片颗粒·绢本工笔笔触·古意年代",
+        "atmosphere_motif": "清雅含蓄·烛影幽深·以静衬动·商道暗涌·东方留白",
+        "motion_pacing": "静帧长镜·极简缓推·人物微动·烛火/纱帘/烟气轻漾"
+      },
+      "prompt_prefix": "Hou Hsiao-hsien style, photoreal live-action, naturalistic candlelit interiors, gauze-veiled soft diffusion, muted elegant palette of celadon ochre and ink-grey, soft window light, painterly restrained static framing, refined period texture, quiet realism",
+      "avoid": "avoid modern objects, avoid text, avoid logo, avoid watermark"
+    },
+    {
+      "id": "kubrick-2001",
+      "name_zh": "库布里克《2001太空漫游》",
+      "type": "director",
+      "reference_image": null,
+      "dimensions": {
+        "camera_lens": "超广角·深焦·70mm 清晰",
+        "composition": "完美对称·单点透视·中心灭点·几何",
+        "lighting": "临床均匀照明·实用光·冷白",
+        "color_grading": "冷调·克制·白为主",
+        "texture_medium": "超清晰·无颗粒·干净",
+        "atmosphere_motif": "无菌未来主义·空旷·疏离·宏大",
+        "motion_pacing": "缓慢对称推进·静止庄严"
+      },
+      "prompt_prefix": "Stanley Kubrick 2001 A Space Odyssey style, perfectly symmetrical one-point perspective, sterile white futurist interior, clinical even lighting, cool restrained palette, ultra-clean 70mm deep-focus clarity, vast detached monumental atmosphere",
+      "avoid": "avoid text, avoid logo, avoid watermark"
+    },
+    {
+      "id": "tarkovsky-stalker",
+      "name_zh": "塔可夫斯基《潜行者》",
+      "type": "director",
+      "reference_image": null,
+      "dimensions": {
+        "camera_lens": "长焦·球面·自然",
+        "composition": "留白·人小景大·纵深",
+        "lighting": "自然天光·柔·低对比·阴天",
+        "color_grading": "去饱和·灰绿棕·冷湿",
+        "texture_medium": "胶片颗粒·略柔",
+        "atmosphere_motif": "雾/水/工业废墟/苔藓·缓慢沉思·潮湿",
+        "motion_pacing": "超长镜头·极缓推移"
+      },
+      "prompt_prefix": "Andrei Tarkovsky Stalker style, desaturated muted grey-green-brown palette, damp decaying post-industrial wasteland, heavy fog and standing water, soft naturalist overcast light, low contrast, film grain, slow contemplative long-take, melancholic poetic atmosphere",
+      "avoid": "avoid text, avoid logo, avoid watermark"
+    },
+    {
+      "id": "film-noir",
+      "name_zh": "黑色电影 Film Noir",
+      "type": "genre",
+      "reference_image": null,
+      "dimensions": {
+        "camera_lens": "标准·深焦",
+        "composition": "低角/倾斜·阴影构图·框中框",
+        "lighting": "硬光·百叶窗投影·极高对比·低调",
+        "color_grading": "黑白·或冷调单色",
+        "texture_medium": "胶片·40s 年代感",
+        "atmosphere_motif": "烟/雨/霓虹窗/百叶窗·宿命危险·都市夜",
+        "motion_pacing": "固定·阴影中运动"
+      },
+      "prompt_prefix": "Classic 1940s film noir, high-contrast black and white, hard venetian-blind shadow patterns, low-key chiaroscuro lighting, cigarette smoke, rain-slicked streets, fatalistic urban night mood, deep shadows",
+      "avoid": "avoid text, avoid logo, avoid watermark"
+    },
+    {
+      "id": "lynch-red-room",
+      "name_zh": "大卫·林奇《双峰·红房间》",
+      "type": "director",
+      "reference_image": null,
+      "dimensions": {
+        "camera_lens": "标准·略广",
+        "composition": "对称·舞台正面·诡异留白",
+        "lighting": "暖钨丝灯·局部·神秘",
+        "color_grading": "浓红 + 黑白Z字 + 暖橙",
+        "texture_medium": "略柔·梦感",
+        "atmosphere_motif": "红幕/Z字地板/雕像·超现实诡异·梦境",
+        "motion_pacing": "缓慢凝滞·倒放感"
+      },
+      "prompt_prefix": "David Lynch Twin Peaks Red Room style, heavy red velvet curtains, black-and-white zigzag chevron floor, surreal uncanny dreamlike mood, warm tungsten lamp glow, deep crimson palette, theatrical frontal symmetry",
+      "avoid": "avoid text, avoid logo, avoid watermark"
+    },
+    {
+      "id": "kurosawa-seven-samurai",
+      "name_zh": "黑泽明《七武士》",
+      "type": "director",
+      "reference_image": null,
+      "dimensions": {
+        "camera_lens": "长焦压缩·深焦",
+        "composition": "动态对角·人物层叠·三分",
+        "lighting": "硬光·高对比·黑白",
+        "color_grading": "纯黑白",
+        "texture_medium": "胶片·年代感",
+        "atmosphere_motif": "雨/风/火/烟·天气即戏剧·动感",
+        "motion_pacing": "多机位·快速·运动"
+      },
+      "prompt_prefix": "Akira Kurosawa Seven Samurai style, dynamic high-contrast black and white, deep-focus telephoto compression, weather as drama with rain wind fire and smoke, layered diagonal composition, kinetic raw energy, vintage film grain",
+      "avoid": "avoid text, avoid logo, avoid watermark"
+    },
+    {
+      "id": "atompunk",
+      "name_zh": "原子朋克 Atompunk",
+      "type": "movement",
+      "reference_image": null,
+      "dimensions": {
+        "camera_lens": "标准·略广·复古镜头光",
+        "composition": "居中·海报感·几何",
+        "lighting": "明亮乐观·均匀·高调",
+        "color_grading": "铬银 + 红蓝 + 米黄·中世纪现代",
+        "texture_medium": "复古印刷·略颗粒·50s",
+        "atmosphere_motif": "铬合金火箭/原子标志/Googie建筑/真空管/翅鳍/雷射枪·乐观复古未来·太空时代",
+        "motion_pacing": "缓慢庄重"
+      },
+      "prompt_prefix": "Atompunk retro-futurism, 1950s atomic-age aesthetic, chrome rockets and ray guns, Googie curved architecture, optimistic bright high-key lighting, cream-and-chrome with red-and-blue accents, mid-century modern design, vacuum tubes and atomic motifs, vintage sci-fi poster look",
+      "avoid": "avoid text, avoid logo, avoid watermark"
+    },
+    {
+      "id": "cyberpunk",
+      "name_zh": "赛博朋克 Cyberpunk",
+      "type": "movement",
+      "reference_image": null,
+      "dimensions": {
+        "camera_lens": "变形宽银幕·长焦",
+        "composition": "压抑纵深·霓虹分层",
+        "lighting": "霓虹实用光·高对比·体积雾",
+        "color_grading": "青-品红霓虹·暗",
+        "texture_medium": "数字·湿反光",
+        "atmosphere_motif": "霓虹/雨/全息广告/蒸汽·高科技低生活·都市夜",
+        "motion_pacing": "手持/缓慢·体积光中"
+      },
+      "prompt_prefix": "Cyberpunk, neon-drenched rain-slicked megacity at night, towering holographic advertisements, teal-and-magenta neon glow, high-tech low-life, volumetric haze, chrome and grime, anamorphic",
+      "avoid": "avoid text, avoid logo, avoid watermark"
+    },
+    {
+      "id": "steampunk",
+      "name_zh": "蒸汽朋克 Steampunk",
+      "type": "movement",
+      "reference_image": null,
+      "dimensions": {
+        "camera_lens": "标准·暖镜",
+        "composition": "繁复机械·中心",
+        "lighting": "煤气灯暖光·暖调",
+        "color_grading": "棕褐 + 黄铜·暖",
+        "texture_medium": "金属/铜/皮革质感",
+        "atmosphere_motif": "齿轮/蒸汽管/黄铜机械/维多利亚·复古工业",
+        "motion_pacing": "稳重"
+      },
+      "prompt_prefix": "Steampunk, Victorian brass-and-copper machinery, gears cogs pistons and steam pipes, warm sepia and polished brass palette, gaslamp amber glow, ornate retro-industrial Victorian design",
+      "avoid": "avoid text, avoid logo, avoid watermark"
+    },
+    {
+      "id": "dieselpunk",
+      "name_zh": "柴油朋克 Dieselpunk",
+      "type": "movement",
+      "reference_image": null,
+      "dimensions": {
+        "camera_lens": "标准·硬",
+        "composition": "对角·力量感·海报",
+        "lighting": "戏剧硬光·宣传画感",
+        "color_grading": "军绿灰·低饱和",
+        "texture_medium": "铆钉钢铁·粗粝",
+        "atmosphere_motif": "铆接钢铁/柴油引擎/装饰艺术/战时·硬朗复古未来",
+        "motion_pacing": "沉重有力"
+      },
+      "prompt_prefix": "Dieselpunk, 1940s war-era industrial retro-future, riveted steel machinery and heavy diesel engines, muted military green-grey palette, dramatic propaganda-poster lighting, art-deco lines, gritty",
+      "avoid": "avoid text, avoid logo, avoid watermark"
+    },
+    {
+      "id": "solarpunk",
+      "name_zh": "太阳朋克 Solarpunk",
+      "type": "movement",
+      "reference_image": null,
+      "dimensions": {
+        "camera_lens": "标准·明亮",
+        "composition": "开阔·绿意环绕",
+        "lighting": "温暖金色阳光·通透",
+        "color_grading": "明亮·绿+白+暖金·高饱和",
+        "texture_medium": "干净·有机",
+        "atmosphere_motif": "绿植/白色有机建筑/自然科技融合·乐观生态未来",
+        "motion_pacing": "舒缓"
+      },
+      "prompt_prefix": "Solarpunk, bright optimistic eco-future, lush greenery woven into white organic architecture, warm golden sunlight, vibrant nature-and-technology harmony, airy hopeful utopian mood",
+      "avoid": "avoid text, avoid logo, avoid watermark"
+    },
+    {
+      "id": "wes-anderson",
+      "name_zh": "韦斯·安德森",
+      "type": "director",
+      "reference_image": null,
+      "dimensions": {
+        "camera_lens": "对称广角·快速横摇/推",
+        "composition": "极致中心对称·正面·平面",
+        "lighting": "均匀软光·无强阴影",
+        "color_grading": "糖果粉彩·高饱和·配色严谨",
+        "texture_medium": "干净·胶片暖",
+        "atmosphere_motif": "对称布景/复古道具·whimsical·强迫症整齐",
+        "motion_pacing": "正面跟拍·snap横摇·章节"
+      },
+      "prompt_prefix": "Wes Anderson style, perfectly centered symmetrical composition, flat frontal framing, pastel candy color palette, meticulous symmetrical production design, even soft lighting, whimsical retro storybook mood",
+      "avoid": "avoid text, avoid logo, avoid watermark"
+    },
+    {
+      "id": "wong-kar-wai",
+      "name_zh": "王家卫",
+      "type": "director",
+      "reference_image": null,
+      "dimensions": {
+        "camera_lens": "长焦浅景·手持·抽帧",
+        "composition": "框中框·偏构图·局部",
+        "lighting": "霓虹实用光·暖钨丝",
+        "color_grading": "高饱和·青红翠绿暖黄·浓郁",
+        "texture_medium": "胶片颗粒·拖影",
+        "atmosphere_motif": "霓虹/雨/烟/镜面·暧昧惆怅·都市夜",
+        "motion_pacing": "抽帧慢门·step-print·手持"
+      },
+      "prompt_prefix": "Wong Kar-wai style, saturated neon-soaked color, teal crimson and amber palette, shallow telephoto frames-within-frames, step-printed motion blur, smoke and rain, melancholic nostalgic intimate mood",
+      "avoid": "avoid text, avoid logo, avoid watermark"
+    },
+    {
+      "id": "blade-runner-ridley-scott",
+      "name_zh": "雷德利·斯科特《银翼杀手》",
+      "type": "director",
+      "reference_image": null,
+      "dimensions": {
+        "camera_lens": "变形宽银幕·长焦",
+        "composition": "压抑纵深·烟雾分层",
+        "lighting": "强逆光/体积光·硬·高对比",
+        "color_grading": "冷蓝 + 霓虹橙黄·暗",
+        "texture_medium": "厚重·烟雾",
+        "atmosphere_motif": "霓虹/酸雨/蒸汽/巨型广告·反乌托邦压迫·赛博夜",
+        "motion_pacing": "缓慢·体积光中"
+      },
+      "prompt_prefix": "Blade Runner Ridley Scott style, dystopian cyberpunk noir, volumetric god rays through smog, neon and acid rain, teal shadows with orange neon glow, anamorphic widescreen, oppressive towering megacity atmosphere",
+      "avoid": "avoid text, avoid logo, avoid watermark"
+    },
+    {
+      "id": "makoto-shinkai",
+      "name_zh": "新海诚",
+      "type": "director",
+      "reference_image": null,
+      "dimensions": {
+        "camera_lens": "标准·望远",
+        "composition": "框景·天空主体",
+        "lighting": "超饱和情绪光·逆光眩光",
+        "color_grading": "超高饱和·蓝金",
+        "texture_medium": "写实超清背景 + 简化角色·赛璐璐",
+        "atmosphere_motif": "云/雨/光斑/城市·唯美怀旧·情绪天空",
+        "motion_pacing": "缓慢·情绪"
+      },
+      "prompt_prefix": "Makoto Shinkai anime style, photorealistic hyper-detailed backgrounds, ultra-vivid saturated sky, golden-hour lens flare, emotional atmospheric light, wallpaper-quality beauty, simplified anime characters",
+      "avoid": "avoid text, avoid logo, avoid watermark"
+    },
+    {
+      "id": "ghibli-miyazaki",
+      "name_zh": "宫崎骏 / 吉卜力",
+      "type": "director",
+      "reference_image": null,
+      "dimensions": {
+        "camera_lens": "平视·宽广",
+        "composition": "留白·自然主义·飞行视角",
+        "lighting": "柔和日光·暖",
+        "color_grading": "温暖手绘·明亮自然·绿蓝",
+        "texture_medium": "手绘水彩·赛璐璐",
+        "atmosphere_motif": "草木/云/风/飞行/食物·治愈奇幻·自然",
+        "motion_pacing": "缓慢·呼吸感"
+      },
+      "prompt_prefix": "Studio Ghibli Hayao Miyazaki style, hand-painted watercolor backgrounds, warm natural daylight, lush nature, gentle wholesome whimsical mood, soft cel-shaded characters, airy hopeful atmosphere",
+      "avoid": "avoid text, avoid logo, avoid watermark"
+    },
+    {
+      "id": "dont-starve",
+      "name_zh": "饥荒 Don't Starve（哥特纸偶·电影化）",
+      "type": "game",
+      "reference_image": null,
+      "dimensions": {
+        "camera_lens": "2.5D舞台浅空间·略广",
+        "composition": "舞台正面对称·中心人物·厚重暗角",
+        "lighting": "高对比戏剧单光源·阴森边缘光",
+        "color_grading": "去饱和炭灰+棕褐sepia·少量选择性高饱和点缀",
+        "texture_medium": "手绘墨水木刻交叉影线·做旧纸张·纸偶剪纸关节",
+        "atmosphere_motif": "哥特怪诞·阴森呆萌·Tim Burton×Edward Gorey维多利亚黑童话",
+        "motion_pacing": "纸偶式抽搐运动·关节摆动"
+      },
+      "prompt_prefix": "Don't Starve (Klei) gothic paper-puppet style transplanted to a stop-motion feature film, Tim Burton x Edward Gorey hand-drawn 2.5D, scratchy ink woodcut cross-hatching, marionette cut-out characters with visible joints and spindly exaggerated proportions, desaturated charcoal-and-sepia palette with a few selective high-saturation accents, dramatic high-contrast single-source lighting, heavy cinematic vignette, aged-paper texture, theatrical shallow-stage parallax, film grain, macabre-whimsical Victorian storybook mood",
+      "avoid": "avoid photorealistic rendering, avoid bright cheerful colors, avoid clean smooth surfaces, avoid text, avoid logo, avoid watermark"
+    },
+    {
+      "id": "borderlands",
+      "name_zh": "无主之地 Borderlands（墨线 cel·电影化）",
+      "type": "game",
+      "reference_image": null,
+      "dimensions": {
+        "camera_lens": "标准略广·动态FPV",
+        "composition": "动态漫画分镜·夸张透视·动作张力",
+        "lighting": "cel硬色块阴影+黑墨阴影线·高对比",
+        "color_grading": "高饱和但脏旧·锈橙沙黄油黑+鲜艳点缀",
+        "texture_medium": "每物体粗黑墨线轮廓·交叉影线·会动的概念原画",
+        "atmosphere_motif": "废土朋克·gonzo疯癫·暴力诙谐",
+        "motion_pacing": "高能爆裂·漫画式冲击"
+      },
+      "prompt_prefix": "Borderlands (Gearbox) cel-shaded comic style transplanted to a feature film, bold hand-drawn black ink outlines on every object and character, cross-hatch ink shading, \"concept art come to life\" graphic-novel look, grungy high-saturation post-apocalyptic palette of rust orange, sand yellow and oil black, high-contrast cel-shaded hard-edged shadows, exaggerated proportions, gonzo wasteland-punk energy, gritty comic texture, cinematic framing",
+      "avoid": "avoid photorealistic smooth shading, avoid soft gradients, avoid pastel colors, avoid text, avoid logo, avoid watermark"
+    },
+    {
+      "id": "eva-cg",
+      "name_zh": "EVA · CG 重制（新世纪福音战士·电影级 3DCG）",
+      "type": "ip-style",
+      "reference_image": null,
+      "reference_image_extra": [],
+      "custom_for": null,
+      "dimensions": {
+        "camera_lens": "电影级长焦/变形宽银幕·极端低角英雄构图·巨物 vs 渺小人类尺度对比",
+        "composition": "中心对称/一点透视·NERV 工业框架·负空间留白+局部日文排印",
+        "lighting": "机库荧光管+蓝色变形光晕·高对比硬侧光/逆光边缘光·应急警示红·体积烟尘丁达尔",
+        "color_grading": "去饱和冷蓝灰/炭黑 base + EVA 紫绿 + 血红 + 橙琥珀内构·撞色",
+        "texture_medium": "硬表面清漆金属+琥珀半透树脂内构 SSS+做旧划痕·胶片颗粒·高光滚降（非 cel 平涂）",
+        "atmosphere_motif": "约束装甲/独角/单或四目荧光/朗基努斯枪/AT力场六边形/十字爆炸/光环/血色残阳/掩体混凝土·末世崇高·宗教肃穆·心理压抑",
+        "motion_pacing": "静止长 cut 凝滞 + 骤然爆发·庵野式节奏断裂（轨 B 见 _轨B-名导招牌镜头库.md 庵野/EVA 条）"
+      },
+      "prompt_prefix": "Neon Genesis Evangelion reimagined as cinematic 3DCG, EVA design DNA rendered with film-grade CG: biomechanical humanoid mecha with restraint armor plating, single horn and glowing slit eyes, royal purple with fluorescent green and black accents and amber translucent resin internals. Hard-surface clearcoat metal with accurate Fresnel and roughness variation, amber subsurface-scattering inner glass, weathered scratches and grime in seams, cinematic HDR highlight roll-off, fine film grain. Desaturated cold blue-grey / charcoal base palette with blood-red and Eva purple-green and amber accents. Extreme low-angle hero framing, monumental giant-versus-tiny-human scale, one-point-perspective symmetry, NERV industrial hangar with yellow-black hazard stripes and green fluorescent tubes and anamorphic blue lens flare, volumetric haze and dust, apocalyptic blood-red sun, cruciform explosions, halo rings and AT-field hexagons, religious sublime apocalyptic melancholy",
+      "avoid": "avoid flat cel shading, avoid hand-drawn anime outlines, avoid bright cheerful colors, avoid text, avoid logo, avoid watermark"
+    }
+  ],
+  "effect_layers": {
+    "_doc": "单层光影/光学效果（可叠加层）。与 styles 不同：styles 是整片基底风格（一次选一个）；本组是叠加层，追加在基底 prompt_prefix 之后给单条镜头加一道光影戏法。由服化道写进身份级底前缀、分镜师写进 @图N 关键帧前缀（两处同一条·生图烧入）。主源见 _风格方法论与库.md §C。",
+    "_usage": "组装顺序：[styles.prompt_prefix 基底] + [effect.prompt_phrase 效果短语(1-2个)] + [中文内容]。导演按 trigger_map 扫场景线索→命中在 production『场景与光影』标 💡建议→用户拍板→服化道/分镜师叠加。",
+    "optical": [
+      {
+        "id": "god-rays",
+        "name_zh": "丁达尔/体积光",
+        "prompt_phrase": "volumetric god rays, crepuscular light beams piercing through dust and haze, atmospheric light shafts, particles floating in the light"
+      },
+      {
+        "id": "underwater-god-rays",
+        "name_zh": "水下丁达尔光柱",
+        "prompt_phrase": "underwater sun shafts piercing through the water surface, god rays in water, rippling caustic light patterns on the pool floor, drifting bubbles and suspended particles, dappled aquatic light"
+      },
+      {
+        "id": "rim-light",
+        "name_zh": "逆光轮廓光",
+        "prompt_phrase": "strong backlight rim-lighting, glowing hair-light halo, bright edge glow separating subject from dark background, silhouette contour light"
+      },
+      {
+        "id": "bloom-halation",
+        "name_zh": "辉光/泛光",
+        "prompt_phrase": "soft bloom and halation around highlights, glowing light bleed, dreamy diffusion glow, luminous overexposed edges"
+      },
+      {
+        "id": "lens-flare",
+        "name_zh": "镜头光晕/光斑",
+        "prompt_phrase": "anamorphic horizontal lens flare, hexagonal bokeh, sun streaks across the lens, cinematic flare"
+      },
+      {
+        "id": "caustics",
+        "name_zh": "焦散",
+        "prompt_phrase": "shimmering water caustics, refracted light ripples dancing across walls and skin, glass-refraction light patterns"
+      },
+      {
+        "id": "subsurface-scattering",
+        "name_zh": "次表面散射",
+        "prompt_phrase": "subsurface scattering, translucent glowing skin, backlit translucency through wax jade and petals, soft inner glow"
+      },
+      {
+        "id": "iridescence",
+        "name_zh": "虹彩/棱镜色散",
+        "prompt_phrase": "iridescent prismatic dispersion, oil-slick rainbow sheen, soap-bubble chromatic shimmer, holographic color shift"
+      },
+      {
+        "id": "neon-wet-reflection",
+        "name_zh": "霓虹湿地反射",
+        "prompt_phrase": "neon reflections on wet asphalt, mirrored puddle reflections, glistening rain-slick surfaces glowing with colored light"
+      },
+      {
+        "id": "firelight",
+        "name_zh": "烛火/壁炉暖光",
+        "prompt_phrase": "flickering warm candlelight and firelight, dancing amber glow, soft tungsten falloff, restless shadows cast by flame"
+      },
+      {
+        "id": "venetian-blind",
+        "name_zh": "百叶窗格光影",
+        "prompt_phrase": "hard venetian-blind slatted shadows, window-grid light bars striping across the scene and faces, film-noir slatted light"
+      },
+      {
+        "id": "komorebi",
+        "name_zh": "木漏日/斑驳树影",
+        "prompt_phrase": "komorebi dappled sunlight filtering through leaves, shifting leaf-shadow patterns on the ground and skin, gentle shimmering light spots"
+      },
+      {
+        "id": "magic-hour",
+        "name_zh": "黄金/蓝调时刻",
+        "prompt_phrase": "golden-hour warm low-angle sun, long soft shadows, magic-hour glow (or blue-hour cool cyan twilight)"
+      }
+    ],
+    "filter": [
+      {
+        "id": "dreamcore",
+        "name_zh": "达利园·奶油梦核",
+        "prompt_phrase": "dreamcore soft creamy haze, nostalgic milky diffusion, warm hazy glow, faded film softness, gentle bloom"
+      },
+      {
+        "id": "dali-surrealism",
+        "name_zh": "达利超现实",
+        "prompt_phrase": "Salvador Dali surrealism, melting distorted forms, impossible dreamscape, uncanny symbolic floating objects, long surreal shadows"
+      },
+      {
+        "id": "light-leaks",
+        "name_zh": "漏光/胶片做旧",
+        "prompt_phrase": "analog light leaks and film burns, red-orange edge flares, vintage Lomo grain dust and scratches, faded retro film wash"
+      },
+      {
+        "id": "duotone",
+        "name_zh": "双色调",
+        "prompt_phrase": "bold duotone two-color grading, single highlight-and-shadow hue split, graphic poster look"
+      },
+      {
+        "id": "rembrandt",
+        "name_zh": "伦勃朗光/油画人像",
+        "prompt_phrase": "Rembrandt portrait lighting, triangular cheek light, painterly chiaroscuro falloff, old-master oil-painting glow"
+      },
+      {
+        "id": "chiaroscuro",
+        "name_zh": "明暗对照/烛影低调",
+        "prompt_phrase": "dramatic chiaroscuro, single-source low-key lighting, deep inky shadows with a sliver of light, sculptural light-and-dark"
+      },
+      {
+        "id": "soft-focus",
+        "name_zh": "柔焦朦胧",
+        "prompt_phrase": "soft-focus dreamy diffusion, gauzy romantic haze, gentle bloom on highlights, misty wistful mood"
+      },
+      {
+        "id": "hard-light-minimal",
+        "name_zh": "极简硬光",
+        "prompt_phrase": "hard direct light, crisp sharp-edged shadows, bold flat color blocks, high-contrast minimal graphic look"
+      },
+      {
+        "id": "crt-vhs",
+        "name_zh": "CRT/VHS老屏",
+        "prompt_phrase": "CRT/VHS screen look, horizontal scanlines, phosphor glow, chromatic fringing and analog video noise, retro low-fi"
+      }
+    ],
+    "trigger_map": [
+      {
+        "cues": [
+          "水",
+          "泳池",
+          "海",
+          "潜水",
+          "水下",
+          "游泳"
+        ],
+        "effects": [
+          "underwater-god-rays",
+          "caustics"
+        ],
+        "why": "阳光穿透水面光柱+水底游动光纹，奢华水景高级"
+      },
+      {
+        "cues": [
+          "窗光",
+          "晨光",
+          "教堂",
+          "林间",
+          "烟雾",
+          "神性",
+          "揭示"
+        ],
+        "effects": [
+          "god-rays"
+        ],
+        "why": "实体光柱穿尘，神圣纵深"
+      },
+      {
+        "cues": [
+          "暗背景",
+          "夜戏",
+          "演唱会",
+          "剪影",
+          "出场"
+        ],
+        "effects": [
+          "rim-light"
+        ],
+        "why": "主体边缘亮边，从暗场跳出"
+      },
+      {
+        "cues": [
+          "回忆",
+          "梦境",
+          "初恋",
+          "童年",
+          "抒情闪回"
+        ],
+        "effects": [
+          "dreamcore",
+          "soft-focus"
+        ],
+        "why": "暖黄柔焦milky雾，回忆杀"
+      },
+      {
+        "cues": [
+          "潜意识",
+          "精神世界",
+          "疯狂",
+          "超现实",
+          "异象"
+        ],
+        "effects": [
+          "dali-surrealism"
+        ],
+        "why": "融化扭曲不可能空间"
+      },
+      {
+        "cues": [
+          "审讯",
+          "偷窥",
+          "百叶窗",
+          "被困",
+          "悬疑",
+          "密谈"
+        ],
+        "effects": [
+          "venetian-blind",
+          "chiaroscuro"
+        ],
+        "why": "条纹投影+浓黑低调，黑色电影张力"
+      },
+      {
+        "cues": [
+          "雨夜",
+          "都市夜",
+          "霓虹",
+          "赛博夜"
+        ],
+        "effects": [
+          "neon-wet-reflection"
+        ],
+        "why": "湿地面反霓虹，都市夜雨"
+      },
+      {
+        "cues": [
+          "烛光",
+          "壁炉",
+          "暧昧",
+          "复古密谈",
+          "晚餐"
+        ],
+        "effects": [
+          "firelight"
+        ],
+        "why": "暖橙摇曳投影，亲密危险"
+      },
+      {
+        "cues": [
+          "公园",
+          "林荫",
+          "午后",
+          "清新",
+          "治愈"
+        ],
+        "effects": [
+          "komorebi"
+        ],
+        "why": "叶隙游动光斑，夏日治愈"
+      },
+      {
+        "cues": [
+          "日出",
+          "日落",
+          "黄昏",
+          "告别",
+          "抒情高潮"
+        ],
+        "effects": [
+          "magic-hour"
+        ],
+        "why": "暖金/冷蓝基调+长柔影"
+      },
+      {
+        "cues": [
+          "肖像",
+          "情绪特写",
+          "脸部"
+        ],
+        "effects": [
+          "rembrandt",
+          "subsurface-scattering"
+        ],
+        "why": "三角光+透光肌理，油画质感"
+      },
+      {
+        "cues": [
+          "玻璃",
+          "酒杯",
+          "珠宝",
+          "水晶",
+          "奢侈品"
+        ],
+        "effects": [
+          "caustics",
+          "iridescence"
+        ],
+        "why": "折射光纹+边缘彩虹，质感名片"
+      },
+      {
+        "cues": [
+          "时尚",
+          "广告",
+          "MV",
+          "封面"
+        ],
+        "effects": [
+          "hard-light-minimal",
+          "duotone"
+        ],
+        "why": "大色块强投影/两色压制"
+      },
+      {
+        "cues": [
+          "复古",
+          "青春",
+          "胶片",
+          "vlog",
+          "年代"
+        ],
+        "effects": [
+          "light-leaks",
+          "crt-vhs"
+        ],
+        "why": "漏光划痕/扫描线，年代感"
+      },
+      {
+        "cues": [
+          "夏日",
+          "强阳",
+          "英雄出场",
+          "史诗"
+        ],
+        "effects": [
+          "lens-flare"
+        ],
+        "why": "阳光横向光斑，实拍史诗"
+      }
+    ]
+  }
+}
