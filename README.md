@@ -3,12 +3,12 @@
 **在视频提示词主干上增加身份底图、材质光影与关键帧精修。**
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
-[![Version](https://img.shields.io/badge/version-0.1.0-green.svg)](CHANGELOG.md)
+[![Version](https://img.shields.io/badge/version-0.2.0-green.svg)](CHANGELOG.md)
 [![Host](https://img.shields.io/badge/host-Claude_Code-orange.svg)](docs/HOST-COMPATIBILITY.md)
 
 阿泽山海创作系列 · AI 影视创作工作流 · Agent / Skills / 提示词 / 空白模板
 
-本项目提供可阅读、可修改的创作方法与角色协作规则。你提供自己的创作目标和授权材料，由主控组织分阶段执行、审核与修订。仓库不附带具体剧本、小说原文、图片、视频或历史创作产物。
+本项目提供可阅读、可修改的创作方法与角色协作规则。你提供自己的创作目标和授权材料，由主控组织分阶段执行、审核与修订。仓库不附带具体剧本、小说原文或制作素材包；首页只收录少量经授权的历史作品展示图。
 
 ## 三个项目怎么选
 
@@ -20,13 +20,41 @@
 
 三个系统独立运行，不需要互相安装；剧本可作为导演系统的输入，由用户选择交接。
 
+## 风格与角色设计展示
+
+![手绘角色设定：多视角与年龄变化](docs/showcase/illustrated-character-sheet.png)
+
+**作者历史视觉实践**：展示多视角身份一致性、服装轮廓和年龄变化，不是当前开源版的一键生成结果。图片仅作展示，不随代码 MIT 授权；[查看说明](docs/showcase/README.md)。
+
+## 功能一图看懂
+
+![专业导演工作流](docs/images/director-workflow.svg)
+
 ## 能做什么
 
 - 导演 + 服化道 + 分镜师，三阶段流程。
-- 18 个一级 Skill，按当前任务加载专业方法，避免无关内容堆进上下文。
+- 19 个一级 Skill，按当前任务加载专业方法，避免无关内容堆进上下文。
 - 明确角色读写边界、输入版本与审核状态；修改上游后重新核验下游结果。
 - 自动修订最多两轮，仍失败就保留问题并交用户决定，失败不会被改成“通过”。
 - 提供本地只读校验工具与回归测试，便于检查分发包是否完整。
+
+## Blender 建模与白模预演（按需）
+
+新增 Blender 操作 Skill，融合作者早期白模经验：空间占位、人物支撑关系、驻留与移动分离、机位选择和关键相位回看。
+
+![Blender 建模与白模预演方法](docs/images/blender-workflow.svg)
+
+可用于白模预演、基础场景建模，以及已有场景的机位/运动调整。当前交付是操作方法、Codex/Claude 按需入口和只读依赖检测；没有搬入旧作品引擎，也不提供“一键任意建模”承诺。
+
+在 Codex 中可使用 `$blender-director`；Claude Code 可请主控调用 `blender-artist`。模型由用户选择，包括用户已配置的 GPT 或 Claude；本包不固定版本，不提供模型服务。具体用法见 [Blender 使用说明](docs/BLENDER-GUIDE.md)。
+
+版本检测：
+
+```shell
+python -B tools/blender_preflight.py
+```
+
+未加入 PATH 时使用 `--binary` 指定本机 Blender 可执行文件。检测只执行 `--version`，不建模、不启用 MCP、不改场景。修改现有场景前必须确认目标对象，禁止全局清场。
 
 ## 环境要求
 
@@ -100,7 +128,7 @@ python -B tools/workflow_guard.py review outputs/review.json --root .
 
 ## 当前验证边界
 
-本发行版完成的检查与发现见 [运行机制检查](docs/RUNTIME-REVIEW.md)。离线测试不等于真实模型创作成功；本轮没有调用模型、生成媒体或完成 Claude Code 全流程 E2E。因此本项目以 **0.1.0 工作流发行版**发布，不承诺一键出片或所有宿主开箱即用。
+本发行版完成的检查与发现见 [运行机制检查](docs/RUNTIME-REVIEW.md)。离线测试不等于真实模型创作成功；本轮没有调用模型、生成媒体或完成 Claude Code 全流程 E2E。因此本项目以 **0.2.0 工作流发行版**发布，不承诺一键出片或所有宿主开箱即用。
 
 用户必须确认创作方向、处理剩余审核问题并自行管理素材权利。平台时长、分辨率和接口会变化，方法文件不构成平台能力保证。
 
@@ -112,6 +140,6 @@ python -B tools/workflow_guard.py review outputs/review.json --root .
 
 ## 作者与许可
 
-作者：**阿泽（Azer）**。采用 [MIT License](LICENSE)，允许使用、修改和再分发，需保留版权与许可声明。第三方理论名称与方法参考见 [NOTICE](NOTICE.md)。
+作者：**阿泽（Azer）**。采用 [MIT License](LICENSE)，允许使用、修改和再分发，需保留版权与许可声明。第三方理论名称与方法参考见 [NOTICE](NOTICE.md)。历史作品展示图采用 [展示页的单独使用范围](docs/showcase/README.md)。
 
 项目名称采用山海神话意象作为品牌命名，不宣称是古籍中的原句或职能定义。

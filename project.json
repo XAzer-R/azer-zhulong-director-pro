@@ -2,16 +2,26 @@
   "schema_version": 1,
   "name": "阿泽 AI导演专业版｜烛龙造境",
   "slug": "azer-zhulong-director-pro",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "native_host": "Claude Code",
   "roles": [
     "director",
     "art-designer",
-    "storyboard-artist"
+    "storyboard-artist",
+    "blender-artist"
   ],
   "review_revision_limit": 2,
   "failure_state": "FAILED",
   "auto_media_generation": false,
   "projects_root": ".",
-  "host_e2e_verified": false
+  "host_e2e_verified": false,
+  "optional_capabilities": {
+    "blender": {
+      "skill": "blender-director",
+      "default_enabled": false,
+      "codex_skill_entry": ".agents/skills/blender-director/SKILL.md",
+      "blender_version_probe": "5.1.2",
+      "modeling_e2e_verified": false
+    }
+  }
 }

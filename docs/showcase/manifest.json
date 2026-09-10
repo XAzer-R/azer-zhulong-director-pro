@@ -1,0 +1,13 @@
+{
+  "schema_version": 1,
+  "assets": [
+    {
+      "path": "docs/showcase/illustrated-character-sheet.png",
+      "sha256": "935d80b0dfcf4d96e2411147bd4af3d8123be28b6e3b9064dde030188765ce01",
+      "caption": "手绘角色设定：多视角、服装一致性与年龄变化",
+      "provenance": "author_historical_ai_artwork_selected_for_public_showcase",
+      "public_use": "project_showcase",
+      "reproduced_by_current_release": false
+    }
+  ]
+}

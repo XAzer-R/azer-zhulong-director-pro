@@ -10,6 +10,10 @@
       "sha256": "c05b4c7f61fdd41fc38425d4c127d21126ba7706f68b022014cbddcae1fef47c"
     },
     {
+      "path": ".claude/agents/blender-artist.md",
+      "sha256": "ed0f6ab52e908c4d6d9da336af5d0eb07bf010cadd7e61696e32edcb9e6db9f8"
+    },
+    {
       "path": ".claude/agents/director.md",
       "sha256": "7333f04af0e9ce6ece65093546efe8768b01db1d3c44952f870afc1ea5ee3a8a"
     },
@@ -19,7 +23,7 @@
     },
     {
       "path": ".claude/CLAUDE.md",
-      "sha256": "09679e989e8f6c1b804059724ce30c5e2485cf12cb26b27f9aac3852307684e0"
+      "sha256": "30434d9dbe28e94098f510bb12c6d6b3006f0d2873f0ce4ffba59b22424c7751"
     },
     {
       "path": ".claude/skills/action-choreography-skill/SKILL.md",
@@ -44,6 +48,18 @@
     {
       "path": ".claude/skills/art-design-skill/visual-style-presets.md",
       "sha256": "e89f1c85689c5057c4dd6f01404481429812408c6bb6061a869daf8e53d6554d"
+    },
+    {
+      "path": ".claude/skills/blender-director/references/blender-operation.md",
+      "sha256": "b285104ea1175aced903b2c46e2aeb850ad5079ab56fc652bab976635be0fb8f"
+    },
+    {
+      "path": ".claude/skills/blender-director/references/greybox-practice.md",
+      "sha256": "7855562f2b11dbc7c90fa5be1281497bf97288a76047b73d7b7bee4380003b82"
+    },
+    {
+      "path": ".claude/skills/blender-director/SKILL.md",
+      "sha256": "2fedf8d4fa94238ba9561f6657ac616dfb94227ae127fa5c7b7f9598ddeb0590"
     },
     {
       "path": ".claude/skills/caribbean-verbinski-skill/SKILL.md",
@@ -156,6 +172,22 @@
     {
       "path": ".claude/skills/storyboard-skill/templates/storyboard-template.md",
       "sha256": "82b657899f020eabfaaca456b27009f746587ee73f586150a27ea7f2cceef087"
+    },
+    {
+      "path": ".agents/skills/blender-director/SKILL.md",
+      "sha256": "7efd73ae35f8ac65a2dd23602cd0bc774c23b1107e94ba015baa92c33f3bf0d3"
     }
-  ]
+  ],
+  "optional_blender_source": {
+    "method_owner_commit": "9c96658434392e1285853bf8efab45fff22dc0a4",
+    "assembly_mode": "adapted_method_only",
+    "engine_copied": false,
+    "mcp_copied": false,
+    "source_file_hashes": {
+      "greybox_method": "16b219ecd8c758b7a05e0f794f7ea09effebe508de87b6add75092327f474bb3",
+      "greybox_role": "d7536bed5253bb7d441b20354af39e84f7374c2ecfce1956deccd4c5a1e94303",
+      "engine_reviewed_not_copied": "039bb8f2903575f62019004dd38d49413550692269dd199aaa7c27a1252ca0d4",
+      "adapter_reviewed_not_copied": "5b4b68984aca1acf6aa8693ca71ba5cd4f1fbc3e4a781da9406db1bd3348eaf4"
+    }
+  }
 }

@@ -5,9 +5,34 @@ from pathlib import Path
 import re
 
 
+def showcase_assets(root):
+    root = Path(root)
+    path = root / 'docs/showcase/manifest.json'
+    if not path.exists():
+        return {}
+    data = json.loads(path.read_text(encoding='utf-8'))
+    allowed = {}
+    for item in data['assets']:
+        relative, expected = item['path'], item['sha256']
+        if not re.fullmatch(r'docs/showcase/[a-z0-9-]+\.png', relative):
+            raise ValueError('INVALID_SHOWCASE_PATH')
+        if relative in allowed or not re.fullmatch('[a-f0-9]{64}', expected):
+            raise ValueError('INVALID_SHOWCASE_RECORD')
+        p = root / relative
+        if not p.is_file() or p.is_symlink() or hashlib.sha256(p.read_bytes()).hexdigest() != expected:
+            raise ValueError('SHOWCASE_HASH_MISMATCH')
+        allowed[relative] = expected
+    return allowed
+
+
 def validate(root):
     root = Path(root)
     errors = []
+    try:
+        approved_images = showcase_assets(root)
+    except (ValueError, KeyError, TypeError):
+        approved_images = {}
+        errors.append('INVALID_SHOWCASE_MANIFEST')
     config = json.loads((root / 'project.json').read_text(encoding='utf-8'))
     role_files = list((root / '.claude/agents').glob('*.md'))
     roles = {p.stem for p in role_files}
@@ -39,7 +64,7 @@ def validate(root):
     files = [p for p in root.rglob('*') if p.is_file() and '.git' not in p.relative_to(root).parts]
     for p in files:
         relative = p.relative_to(root).as_posix()
-        if p.suffix in ('.png', '.jpg', '.mp4', '.wav', '.zip', '.rar', '.sqlite', '.db'):
+        if p.suffix in ('.png', '.jpg', '.mp4', '.wav', '.zip', '.rar', '.sqlite', '.db') and relative not in approved_images:
             errors.append('UNEXPECTED_ASSET:' + relative)
         if p.suffix == '.json':
             try:
