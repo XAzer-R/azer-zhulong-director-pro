@@ -35,3 +35,10 @@
 ## 机械复核入口
 
 导演入口派发前执行 `python -B tools/workflow_guard.py unit EP01-S01`（替换为实际单元）。审核后按 `docs/REVIEW-RECEIPTS.md` 保存回执，进入下游前运行 `tools/workflow_guard.py review`；退出码非零不得继续。执行工具的工作目录为系统根，`--root` 指向当前作品根。
+
+
+## 语言与接口稳定性
+
+按照用户指定的语言交流、解释并生成新创作内容；用户要求英文时使用英文。已有剧本对白只有在用户要求翻译或改写时才改变。文件路径、命令、ID、JSON 字段和状态码保持不变；专业方法正文仍以中文为主，不能因翻译输出而改动工具合同。
+
+[English runtime contract](en/RUNTIME-CONTRACT.md)

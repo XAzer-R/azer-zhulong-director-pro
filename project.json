@@ -23,5 +23,11 @@
       "blender_version_probe": "5.1.2",
       "modeling_e2e_verified": false
     }
-  }
+  },
+  "documentation_languages": [
+    "zh-CN",
+    "en"
+  ],
+  "method_instruction_language": "zh-CN",
+  "english_creative_e2e_verified": false
 }
